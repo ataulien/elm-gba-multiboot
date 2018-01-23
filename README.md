@@ -21,6 +21,8 @@ Entering: The Gameboy Advance!
 
 I played around with the GBAs multiboot-capability (that is: upload a small rom using the Link-Cable) before, but couldn't get it to work. I still had my modified GBA laying around... (which I had no cables for, so it looks kind of demolished now since I had to solder some directly to the board and broke the casing while doing so)
 
+![My GBA](https://github.com/ataulien/elm-gba-multiboot/blob/master/media/the-better-link-cable.jpg)
+
 Since the Gameboy uses the simple SPI-Protocol for communication, which is a widely adopted industry standard, and the Arduino has a library for that, I thought: "Why not? That would be fun!".
 
 A small (kinda-working) prototype in C later: Time to port this thing to johnny-five and elm!
@@ -33,7 +35,11 @@ My first attempt had the Arduino just being a proxy, getting the SPI-commands fr
 
 I ended up coding the whole protocol in C on the arduino, using an extremly simple custom serial protocol to talk to NodeJS and Elm on the PC-side of things.
 
+![Elm!](https://github.com/ataulien/elm-gba-multiboot/blob/master/media/yes-i-took-a-screenshot-with-my-phone--looks-cool-doesnt-it.jpg)
+
 So, to upload a ROM to the Gameboy, one would have Elm send the ROM-Data over a serial-connection to the arduino, which then talks to the gameboy, encrypts the data and sends it further down the line. 
+
+![Oh god it finally works.](https://github.com/ataulien/elm-gba-multiboot/blob/master/media/it-finally-works---im-freeeee.jpg)
 
 The Elm-Program basically resembles a state machine and uses ports to talk to NodeJS, which I tried to use as little as possible.
 
