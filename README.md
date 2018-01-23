@@ -9,6 +9,8 @@ Here are some facts:
  2. I've compiled my attempt with Duktape for Linux to run on my desktop-computer - worked fine.
  3. Running the closure-compiler on the generated file to reduce it's size didn't help either.
  
+![Elm too strong for STM32...](https://github.com/ataulien/elm-gba-multiboot/blob/master/media/elm-too-strong-for-stm32.jpg)
+ 
 In conclusion: I didn't get elm to run on an embedded system. A RaspberryPi would have worked, but at that point I kinda gave up.
  
 There are some other promising projects which allow to run some JS-Code via NodeJS on a PC and only send small commands to a connected Arduino, for example. One of those projects is "Johnny-Five", and I had it running quite fast. From the idea to a blinking LED using NodeJS and Elm in under half an hour!
